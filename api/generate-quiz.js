@@ -20,6 +20,19 @@ function runMiddleware(req, res, fn) {
 }
 
 export default async function handler(req, res) {
+  // Add CORS headers directly for better handling of OPTIONS requests
+  res.setHeader('Access-Control-Allow-Credentials', true);
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
+  res.setHeader('Access-Control-Allow-Headers', 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version');
+  console.log('req', req);
+
+  // Handle OPTIONS requests immediately
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
+  
+  // For other methods, still use the middleware
   await runMiddleware(req, res, cors);
 
   if (req.method !== 'POST') {
