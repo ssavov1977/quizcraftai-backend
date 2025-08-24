@@ -1,0 +1,26 @@
+{
+  "name": "quizcraftai-backend",
+  "version": "1.0.0",
+  "description": "Backend for a QuizCraftAi mobile native app builded with expo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ssavov1977/quizcraftai-backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/ssavov1977/quizcraftai-backend/issues"
+  },
+  "homepage": "https://github.com/ssavov1977/quizcraftai-backend#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "openai": "^5.15.0"
+  }
+}
